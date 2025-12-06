@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaPlus — Produits</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo pha.jpg" alt="logo" class="me-2 rounded" width="44" height="44">
+        <span class="fw-bold">PharmaPlus</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav2">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav2">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link active" href="produits.html">Produits</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="apropos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+ 
+  <main class="py-5">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        
+        <h2>Nos produits</h2>
+        <div>
+          <input id="searchInput" class="form-control" placeholder="Rechercher un produit..." style="min-width:240px">
+        </div>
+      </div>
+
+     
+      <div id="productsGrid" class="row g-4">
+
+        <!-- 1 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pro1.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Paracétamol 500mg</h5>
+              <p class="card-text text-muted small">Douleurs et fièvre.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">1 200 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="remplan2.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Sirop Toux</h5>
+              <p class="card-text text-muted small">Adoucit et calme la toux.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">2 500 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="mod3.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column cover">
+              <h5 class="card-title">Vitamine C 1000mg</h5>
+              <p class="card-text text-muted small">Renforce l'immunité.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">3 000 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="PRODUIT4.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Crème Dermato</h5>
+              <p class="card-text text-muted small">Irritations cutanées.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">4 500 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="produit5.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Ibuprofène 400mg</h5>
+              <p class="card-text text-muted small">Anti-douleur puissant.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">1 800 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pro6.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Gel Main Désinfectant</h5>
+              <p class="card-text text-muted small">Antibactérien 70% alcool.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">1 000 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pr7.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Gants Médicaux</h5>
+              <p class="card-text text-muted small">Protection sanitaire.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">2 000 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pr8.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Masque Chirurgical</h5>
+              <p class="card-text text-muted small">Boîte de 50 masques.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">3 500 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pr9.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Thermomètre Digital</h5>
+              <p class="card-text text-muted small">Mesure rapide.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">5 500 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pro1.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Dolo 650mg</h5>
+              <p class="card-text text-muted small">Soulagement rapide.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">1 500 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="PRODUIT11.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Pastilles Gorge</h5>
+              <p class="card-text text-muted small">Adoucit la gorge.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">1 200 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="produit12.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Bandes de Pansement</h5>
+              <p class="card-text text-muted small">Pack de 20.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">900 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 13 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pr13.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Crème Antiseptique</h5>
+              <p class="card-text text-muted small">Désinfection locale.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">2 200 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="PR14.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Multivitamines</h5>
+              <p class="card-text text-muted small">Énergie quotidienne.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">4 200 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 15 -->
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <div class="card h-100 shadow-sm">
+            <img src="pr15.jpg" class="card-img-top">
+            <div class="card-body d-flex flex-column">
+              <h5 class="card-title">Spray Anti-allergie</h5>
+              <p class="card-text text-muted small">Respiration facile.</p>
+              <div class="mt-auto d-flex justify-content-between">
+                <div class="fw-bold">3 800 XOF</div>
+                <button class="btn btn-sm btn-primary">Ajouter</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div> 
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center small">© 2025 PharmaPlus — contact@pharmaplus.sn</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html

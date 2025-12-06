@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>PharmaPlus — Contact</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <img src="logo pha.jpg" alt="logo" class="me-2 rounded" width="44" height="44">
+        <span class="fw-bold">PharmaPlus</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav5">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav5">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+          <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="apropos.html">À propos</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="py-5">
+    <div class="container">
+      <h2>Contactez-nous</h2>
+      <p class="text-muted">Envoyez un message ou rendez-nous visite.</p>
+
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <form id="contactForm" class="p-4 border rounded shadow-sm">
+            <div class="mb-3">
+              <label for="name" class="form-label">Nom</label>
+              <input id="name" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input id="email" type="email" class="form-control" required>
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Message / Ordonnance (optionnel)</label>
+              <textarea id="message" class="form-control" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-animated">Envoyer</button>
+            <div id="formAlert" class="mt-3" style="display:none;"></div>
+          </form>
+
+          <div class="mt-4 small text-muted">
+            <p><strong>Adresse :</strong>  colobane Rue 12, Dakar</p>
+            <p><strong>Horaires :</strong> Lun–Sam 8:00–20:00</p>
+            <p><strong>Tél :</strong> +221 33 000 00 00</p>
+            <p><strong>Email :</strong> contact@pharmaplus.sn</p>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <!-- Google Maps embed (exemple) -->
+          <div class="ratio ratio-16x9 rounded overflow-hidden shadow-sm">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1924.0000000000002!2d-17.0!3d14.7!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0000000000000000!2sPharmacy!5e0!3m2!1sfr!2ssn!4v0000000000000"
+              style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+          <p class="text-muted small mt-2">La carte  :  colobane Rue14 mosquee Alphla.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="bg-dark text-white py-4">
+    <div class="container text-center small">© 2025 PharmaPlus — contact@pharmaplus.sn</div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
