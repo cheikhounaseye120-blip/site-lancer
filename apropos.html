@@ -1,81 +1,109 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PharmaPlus — À propos</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabaly Consulting - Nos Métiers</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* CSS personnalisé pour le fond bleu foncé et les cartes */
+        .navy-blue-bg {
+            background-color: #0b1c3c; /* Bleu très foncé, similaire à l'image */
+            padding: 5rem 0; /* Espacement vertical pour la section */
+        }
+
+        .metier-card {
+            background-color: #1a2b50; /* Un bleu légèrement plus clair pour les cartes */
+            border: none;
+            border-radius: 15px; /* Bords arrondis */
+            padding: 2rem;
+            text-align: center;
+            height: 100%; /* S'assurer que toutes les cartes ont la même hauteur dans la grille */
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .metier-card:hover {
+            transform: translateY(-5px); /* Petit effet de survol pour l'interactivité */
+        }
+
+        .metier-card-icon {
+            font-size: 2.5rem;
+            color: #ff7b25; /* Couleur orange pour les icônes */
+            margin-bottom: 1rem;
+        }
+
+        .metier-card .card-title {
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .metier-card .card-text {
+            color: #c4c4c4; /* Texte gris clair pour le contraste */
+        }
+        
+        .btn-custom {
+            background-color: #5560e9; /* Couleur du bouton Voir plus */
+            border-color: #5560e9;
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            font-weight: 600;
+        }
+    </style>
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+
+<section class="navy-blue-bg text-white">
     <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo pha.jpg" alt="logo" class="me-2 rounded" width="44" height="44">
-        <span class="fw-bold">PharmaPlus</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav4">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav4">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-          <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link active" href="apropos.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-  <main class="py-5">
-    <div class="container">
-      <h2>À propos de PharmaPlus</h2>
-      <p class="text-muted">PharmaPlus est une pharmacie locale dédiée à la santé et au bien-être de notre communauté.</p>
-
-      <div class="row g-4 mt-3">
-        <div class="col-md-6">
-          <h5>Notre mission</h5>
-          <p class="text-muted">Offrir des médicaments fiables, des conseils professionnels et des services accessibles à tous.</p>
+        
+        <div class="text-center mb-5">
+            <h1 class="fw-bold">Nos Métiers</h1>
+            <p class="lead">Des services intégrés pour relever vos défis de structuration et de performance.</p>
         </div>
-        <div class="col-md-6">
-          <h5>Notre vision</h5>
-          <p class="text-muted">Devenir la pharmacie de référence en qualité de service et proximité.</p>
-        </div>
-      </div>
 
-      <h4 class="mt-4">Notre équipe</h4>
-      <div class="row g-3">
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card text-center">
-            <img src="portrait-female-pharmacist-working-drugstore.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="team1" style="width:120px;height:120px;object-fit:cover;">
-            <div class="card-body">
-              <h6 class="card-title mb-0">Dr. Abdoulay</h6>
-              <p class="small text-muted">Pharmacienne | Responsable</p>
+        <div class="row g-4">
+            
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="metier-card shadow">
+                    <div class="metier-card-icon"><i class="fas fa-compass"></i></div>
+                    <h3 class="card-title">Stratégie & Croissance</h3>
+                    <p class="card-text">Plans stratégiques, business models, fusions/acquisitions, levées de fonds</p>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-sm-6 col-md-4 col-lg-3">
-          <div class="card text-center">
-            <img src="portrait-woman-working-pharmaceutical-industry.jpg" class="card-img-top rounded-circle mx-auto mt-3" alt="team2" style="width:120px;height:120px;object-fit:cover;">
-            <div class="card-body">
-              <h6 class="card-title mb-0">M. ndiang</h6>
-              <p class="small text-muted">Assistante pharmacie</p>
+
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="metier-card shadow">
+                    <div class="metier-card-icon"><i class="fas fa-chart-bar"></i></div>
+                    <h3 class="card-title">Conseil Financier & Révision</h3>
+                    <p class="card-text">Restructuration, révision comptable, retraitements SYSCOA/IFRS</p>
+                </div>
             </div>
-          </div>
+
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="metier-card shadow">
+                    <div class="metier-card-icon"><i class="fas fa-grip"></i></div>
+                    <h3 class="card-title">Contrôle de Gestion</h3>
+                    <p class="card-text">Budgets, reporting, tableaux de bord personnalisés de performance</p>
+                </div>
+            </div>
+            
+            <div class="col-sm-12 col-md-6 col-lg-6">
+                <div class="metier-card shadow">
+                    <div class="metier-card-icon"><i class="fas fa-book"></i></div>
+                    <h3 class="card-title">Comptabilité</h3>
+                    <p class="card-text">Tenue comptable SYSCOA/IFRS/US GAAP, comptabilité analytique, externalisation</p>
+                </div>
+            </div>
+
+        </div> <div class="text-center mt-5">
+            <button class="btn btn-custom btn-lg">Voir plus</button>
         </div>
-      </div>
 
-    </div>
-  </main>
+    </div> </section>
 
-  <footer class="bg-dark text-white py-4">
-    <div class="container text-center small">© 2025 PharmaPlus — contact@pharmaplus.sn</div>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

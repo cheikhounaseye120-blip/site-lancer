@@ -1,200 +1,589 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>PharmaPlus — Accueil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sabaly Consulting - Site Complet</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
 
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+        :root {
+            --sabaly-primary-blue: #003366;
+            --sabaly-dark-bg: #003366; 
+            --sabaly-accent-orange: #F06A26; 
+            --sabaly-check-blue: #007bff; 
+            --sabaly-light-text: #B9C4CE;
+        }
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+        body { scroll-behavior: smooth; margin:0; padding:0; font-family: 'Arial', sans-serif; }
 
-  <link rel="stylesheet" href="style.css">
+     
+        .navbar { background-color: var(--sabaly-dark-bg) !important; padding-top: 15px; padding-bottom: 15px; }
+        .nav-link { color: white !important; font-weight: 500; margin-left: 15px; }
+        .nav-link:hover { color: var(--sabaly-accent-orange) !important; }
+        .logo-sabaly img { max-height: 60px; }
+
+     
+        @media (max-width: 991.98px) {
+            .navbar-collapse {
+                background-color: var(--sabaly-dark-bg); 
+                padding: 15px 20px;
+                border-radius: 0 0 8px 8px;
+            }
+        
+            .navbar-collapse .nav-link {
+                color: white !important; 
+                padding: 10px 0;
+                margin-left: 0;
+            }
+        }
+    
+        .hero-section {
+            color: white;
+            min-height: 85vh; 
+            display: flex;
+            align-items: center;
+        
+            background-image: linear-gradient(rgba(0,51,102,0.8), rgba(0,51,102,0.8)), url('bg2.jpg'); 
+            background-size: cover;
+            background-position: center;
+            padding-top: 8rem;
+            padding-bottom: 8rem;
+            background-color: var(--sabaly-primary-blue); 
+        }
+        .hero-section .text-orange { color: var(--sabaly-accent-orange); }
+        .hero-section .btn {
+            background-color: white !important; 
+            color: var(--sabaly-primary-blue) !important;
+            border-radius: 8px; 
+            padding: 12px 30px; 
+            font-size: 1.15rem;
+            transition: all 0.3s;
+        }
+        .hero-section .btn:hover {
+             background-color: var(--sabaly-accent-orange) !important;
+             color: white !important;
+        }
+
+
+        /* 4. Style de la Section À Propos */
+        .about-section { padding-top: 5rem; padding-bottom: 5rem; }
+        .about-title-orange { color: var(--sabaly-accent-orange); font-size: 0.9rem; font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 0.5rem; }
+        .about-main-title { font-size: 2.5rem; font-weight: 700; line-height: 1.2; margin-bottom: 3rem; color: var(--sabaly-primary-blue); }
+        .mission-vision-card {
+            border: none !important;
+            border-radius: 12px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            min-height: 200px;
+        }
+        .mission-card { border-left: 5px solid var(--sabaly-accent-orange) !important; }
+        .vision-card { border-left: 5px solid var(--sabaly-primary-blue) !important; }
+        .mission-vision-card h3 { font-weight: 700; }
+        .mission-vision-card .mission-title { color: var(--sabaly-primary-blue); }
+        .mission-vision-card .vision-title { color: var(--sabaly-accent-orange); }
+        .sabaly-about-block {
+            display: flex; /* Utilisé pour aligner icône et texte */
+            align-items: flex-start;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1); 
+        }
+        .sabaly-about-block:last-child { border-bottom: none; }
+        .sabaly-about-icon { color: var(--sabaly-accent-orange); font-size: 1.5rem; width: 40px; margin-right: 20px; text-align: center; }
+
+
+        /* 5. Style de la Section Services (Métiers) - FIDÉLITÉ AUX CAPTURES */
+        .service-section-header { 
+            background-color: var(--sabaly-primary-blue); 
+            padding: 80px 20px; 
+            margin-bottom: 0 !important;
+        }
+        .service-detail-card {
+            background-color: white; 
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 30px !important; 
+        }
+        .service-detail-title {
+            font-weight: 700; 
+            font-size: 1.5rem; 
+            color: var(--sabaly-primary-blue);
+            margin-bottom: 15px;
+        }
+        .service-detail-card .service-list {
+            padding-left: 0;
+            list-style: none;
+        }
+        .service-detail-card .service-list li {
+            position: relative;
+            padding-left: 30px; 
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #495057; 
+        }
+        .service-detail-card .service-list li::before {
+            content: "\2714"; /* Utilisation du caractère coche */
+            color: var(--sabaly-check-blue); 
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 2px;
+            font-size: 1.2rem;
+        }
+
+
+        .section-title { font-weight: 700; font-size: 2rem; color: var(--sabaly-primary-blue); margin-bottom: 1rem;}
+        .program-card, .reference-card { 
+            padding: 25px; 
+            border-radius: 15px; 
+            margin-bottom: 25px; 
+            background-color: white; 
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        .program-card h3, .reference-card h4 { color: var(--sabaly-primary-blue); font-weight: 700; }
+    
+        .program-card ul, .reference-card ul { list-style: none; padding-left: 0; }
+        .program-card li, .reference-card li { 
+            position: relative; 
+            padding-left: 25px; 
+            margin-bottom: 8px;
+            font-size: 1.05rem; 
+        }
+        .program-card li::before, .reference-card li::before { 
+            content: "\2714"; 
+            color: var(--sabaly-check-blue); 
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+
+        /* 7. Style du Footer */
+        .footer-sabaly { background-color: var(--sabaly-dark-bg); color: white; padding: 40px 0; }
+        .footer-sabaly a { color: var(--sabaly-light-text); text-decoration: none; transition: color 0.3s; }
+        .footer-sabaly a:hover { color: var(--sabaly-accent-orange); }
+        .footer-sabaly h3 { 
+            font-size: 1.5em; 
+            font-weight: bold;
+            margin-bottom: 15px;
+            padding-bottom: 8px;
+            /* Changement: Ligne et texte des titres du footer en Orange (comme sur la capture) */
+            border-bottom: 3px solid var(--sabaly-accent-orange);
+            display: inline-block; 
+            color: var(--sabaly-accent-orange); /* Titres en orange */
+        }
+        .footer-sabaly .icon-placeholder { color: var(--sabaly-accent-orange); margin-right: 15px; font-size: 1.2em; }
+        .footer-copyright { border-top: 1px solid rgba(255, 255, 255, 0.2); padding-top: 15px; margin-top: 30px; color: var(--sabaly-light-text); }
+       
+        .footer-list li a {
+            color: white !important; 
+            font-weight: 500;
+        }
+        
+        .footer-sabaly p {
+            color: white; 
+        }
+
+    </style>
 </head>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
 
-  <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
-    <div class="container">
-      <a class="navbar-brand d-flex align-items-center" href="index.html">
-        <img src="logo pha.jpg" alt="logo" class="me-2 rounded" width="90" height="90">
-        <span class="fw-bold">PharmaPlus</span>
-      </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="mainNav">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center">
-          <li class="nav-item"><a class="nav-link active" href="index.html">Accueil</a></li>
-          <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
-          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="apropos.html">À propos</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-
-
-  <header class="bg-light py-4">
-    <div class="container">
-      <div class="row g-4 align-items-center">
-        <div class="col-lg-6">
-          <h1 class="display-6 mb-3">Votre pharmacie de confiance — soins & conseils</h1>
-          <p class="lead text-muted">Livraison à domicile, conseils pharmaceutiques, large choix de médicaments et produits de santé.</p>
-          <div class="d-flex gap-2">
-            <a href="produits.html" class="btn btn-primary btn-animated">Voir les produits</a>
-            <a href="contact.html" class="btn btn-outline-primary">Nous contacter</a>
-          </div>
-          <div class="mt-3 small text-muted">SICAP  Rue 12, Dakar</div>
+<nav class="navbar navbar-expand-lg sticky-top shadow-sm" id="main-nav">
+    <div class="container"> 
+        <a class="navbar-brand logo-sabaly me-5" href="#accueil"><img src="mml.jpg" alt="Sabaly Consulting Logo" width="100"></a> 
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="#programmes">Programmes</a></li>
+                <li class="nav-item"><a class="nav-link" href="#metiers">Services</a></li>
+                <li class="nav-item"><a class="nav-link" href="#references">Références</a></li>
+                <li class="nav-item ms-lg-3"><a class="btn fw-bold text-decoration-none orange" style="background-color: var(--sabaly-accent-orange);" href="#contact">Faire Appel</a></li>
+            </ul>
         </div>
+    </div>
+</nav>
 
-        <div class="col-lg-6">
-          <div id="homeCarousel" class="carousel slide shadow-sm" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="0" class="active"></button>
-              <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="1"></button>
-              <button type="button" data-bs-target="#homeCarousel" data-bs-slide-to="2"></button>
-            </div>
-            <div class="carousel-inner rounded">
-              <div class="carousel-item active">
-                <img src="CONSEL M.jpg" class="d-block w-100" alt="pharm1">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Soins rapides</h5>
-                  <p>Conseils et médicaments adaptés.</p>
+<main>
+
+    <header class="hero-section" id="accueil">
+        <div class="container">
+            <h1 class="display-3 fw-bold text-white">Des services <br>pensés pour <span class="text-orange">votre impact</span></h1>
+            <p class="lead mb-4 mt-4 w-75">
+                Audit, conseil, gestion financière, renforcement de capacités... Nous accompagnons les organisations africaines à chaque étape clé de leur croissance.
+            </p>
+            <a href="#contact" class="btn --sabaly-button-orange color orange  fw-bold">Nous Contacter</a>
+        </div>
+    </header>
+
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h2 class="about-title-orange">À PROPOS DE SABALY CONSULTING</h2>
+                    <h1 class="about-main-title">UNE HISTOIRE DE VISION <br>D'ENGAGEMENT <br>ET DE RIGUEUR</h1>
+                    
+                    <div class="sabaly-about-block">
+                        <div class="sabaly-about-icon"><i class="fas fa-lightbulb"></i></div>
+                        <p class="flex-grow-1">
+                            Fondée par Merry D. Niang, experte-comptable certifiée (CPA), Sabaly Consulting accompagne les **PMEs, start-ups et ONG africaines dans leur structuration et leur croissance.
+                        </p>
+                    </div>
+                    
+                    <div class="sabaly-about-block">
+                        <div class="sabaly-about-icon"><i class="fas fa-users"></i></div>
+                        <p class="flex-grow-1">
+                            Notre approche allie exigence professionnelle, **proximité humaine et compréhension des réalités locales.
+                        </p>
+                    </div>
+
+                    <div class="sabaly-about-block">
+                        <div class="sabaly-about-icon"><i class="fas fa-globe-africa"></i></div>
+                        <p class="flex-grow-1">
+                            Nous intervenons auprès d'entrepreneurs, ministères, instituts de recherche ou bailleurs internationaux, avec rigueur et passion.
+                        </p>
+                    </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="man-working-as-pharmacist.jpg" class="d-block w-100" alt="pharm2">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Produits sains</h5>
-                  <p>Parapharmacie et compléments de qualité.</p>
+                <div class="col-lg-6 d-flex align-items-center justify-content-center mt-5 mt-lg-0">
+                    <img src="nff.jpg" alt="Merry D. Niang" class="img-fluid about-image shadow-lg">
                 </div>
-              </div>
-              <div class="carousel-item">
-                <img src="livraison.jpg" class="d-block w-100" alt="pharm3">
-                <div class="carousel-caption d-none d-md-block">
-                  <h5>Livraison rapide</h5>
-                  <p>Recevez vos médicaments chez vous.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="pb-5">
+        <div class="container">
+            <div class="row g-4">
+                
+                <div class="col-md-6">
+                    <div class="card mission-vision-card mission-card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title mission-title text-start mb-3">Notre Mission</h3>
+                            <p class="card-text fs-5">
+                                Fournir des solutions stratégiques, financières et opérationnelles personnalisées, pour aider les organisations à renforcer leur efficacité, sécuriser leurs financements et créer un impact durable.
+                            </p>
+                        </div>
+                    </div>
                 </div>
-              </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#homeCarousel" data-bs-slide="prev">
-              <span class="carousel-control-prev-icon"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#homeCarousel" data-bs-slide="next">
-              <span class="carousel-control-next-icon"></span>
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- FEATURES -->
-  <section class="py-5">
+                <div class="col-md-6">
+                    <div class="card mission-vision-card vision-card h-100 p-4">
+                        <div class="card-body">
+                            <h3 class="card-title vision-title text-start mb-3">Notre Vision</h3>
+                            <p class="card-text fs-5">
+                                Être un cabinet de référence en Afrique pour la structuration, la croissance et la professionnalisation des organisations à fort potentiel d'impact.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="metiers" class="pb-5">
+        <div class="service-section-header text-center mb-5">
+            <div class="container">
+                <h1 class="text-white mb-3 fw-bold">Nos Services</h1>
+                <p class="text-white-50 lead">Des services intégrés pour répondre à tous vos défis de structuration et de performance.</p>
+            </div>
+        </div>
+        
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Stratégie & Croissance</h4>
+                        <ul class="service-list">
+                            <li>Plans stratégiques pluriannuels</li>
+                            <li>Business models & plans d'affaires</li>
+                            <li>Fusions, acquisitions, due diligence</li>
+                            <li>Levée de fonds</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Conseil Financier & Révision</h4>
+                        <ul class="service-list">
+                            <li>Restructuration financière</li>
+                            <li>Révision comptable, assistance audit</li>
+                            <li>Retraitement d'états financiers (SYSCOA/IFRS)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Contrôle de Gestion</h4>
+                        <ul class="service-list">
+                            <li>Mise en place de la fonction Contrôle de Gestion</li>
+                            <li>Élaboration et suivi budgétaire</li>
+                            <li>Tableaux de bord et Reporting</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Audit & Organisation</h4>
+                        <ul class="service-list">
+                            <li>Diagnostic organisationnel</li>
+                            <li>Audit de performance</li>
+                            <li>Cartographie des risques</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Digitalisation & Process</h4>
+                        <ul class="service-list">
+                            <li>Mise en place d'ERP</li>
+                            <li>Manuels de procédures</li>
+                            <li>Gestion du changement</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mb-4">
+                    <div class="service-detail-card p-4 h-100">
+                        <h4 class="service-detail-title">Support Opérationnel</h4>
+                        <ul class="service-list">
+                            <li>Mise à disposition de personnel (CFO, RH, admin)</li>
+                            <li>Gestion paie, achats, subventions</li>
+                            <li>Accompagnement post-création et passage à l'échelle</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div> 
+        </div>
+    </section>
+    
+    <section id="programmes" class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title text-center mb-5">NOS PROGRAMMES</h2>
+        
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="program-card">
+                        <h3 class="mb-3">Starter Pack de l'Entrepreneur</h3>
+                        <p class="text-muted">Un tremplin stratégique pour lancer et structurer votre projet entrepreneurial.</p>
+                        <ul>
+                            <li>Diagnostic de votre projet ou idée</li>
+                            <li>Structuration juridique</li>
+                            <li>Élaboration du business model</li>
+                            <li>Plan d'affaires bancaire et réaliste</li>
+                            <li>Coaching stratégique et financier</li>
+                            <li>Accès au réseau de partenaires</li>
+                            <li>Suivi post-création</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="program-card">
+                        <h3 class="mb-3">Non-Profit Growth Lab</h3>
+                        <p class="text-muted">Accélérateur pour les organisations à but non lucratif</p>
+                        <ul>
+                            <li>Diagnostic organisationnel approfondi</li>
+                            <li>Mise en place des manuels de procédures</li>
+                            <li>Structuration de la gouvernance</li>
+                            <li>Appui à la gestion de subventions</li>
+                            <li>Accompagnement à la rédaction de propositions</li>
+                            <li>Coaching des équipes de direction</li>
+                            <li>Digitalisation des processus</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="references" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center mb-3 mt-5">Nos Références</h2>
+            <p class="text-center text-muted mb-5 lead">À la croisée des secteurs public, privé et à but non lucratif, nous apportons des solutions concrètes à fort impact.</p>
+            <div class="row g-4">
+                
+                <div class="col-md-6">
+                    <div class="reference-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-sabaly-blue me-3" style="font-size: 2rem; color: var(--sabaly-primary-blue);"><i class="fas fa-university"></i></div>
+                            <h4 class="mb-0">Secteur public & éducation</h4>
+                        </div>
+                        <ul>
+                            <li>Assistance financière et technique, diagnostics organisationnels.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="reference-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-sabaly-blue me-3" style="font-size: 2rem; color: var(--sabaly-primary-blue);"><i class="fas fa-microphone-alt"></i></div>
+                            <h4 class="mb-0">Recherche & enseignement supérieur</h4>
+                        </div>
+                        <ul>
+                            <li>Retraitement des états financiers (IFRS/SYSCOHADA).</li>
+                            <li>Transformation du reporting financier.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="reference-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-sabaly-blue me-3" style="font-size: 2rem; color: var(--sabaly-primary-blue);"><i class="fas fa-building"></i></div>
+                            <h4 class="mb-0">Secteur privé</h4>
+                        </div>
+                        <ul>
+                            <li>due diligence pour une acquisition stratégique.</li>
+                            <li>diagnostic, restructuration, digitalisation, mise en place de processus.</li>
+                            <li>business plans et accompagnement stratégique.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-6">
+                    <div class="reference-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="text-sabaly-blue me-3" style="font-size: 2rem; color: var(--sabaly-primary-blue);"><i class="fas fa-hands-helping"></i></div>
+                            <h4 class="mb-0">ONG & bailleurs</h4>
+                        </div>
+                        <ul>
+                            <li>manuel de procédures du projet E4Y.</li>
+                            <li>manuels, protocoles et conventions dans 15 pays CEDEAO (projet ONUFEMMES).</li>
+                            <li>rédaction de manuels de procédures.</li>
+                            <li>Appui à la structuration, digitalisation et mise en conformité de projets financés.</li>
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4 fw-bold section-title">Nos Partenaires</h2>
+            <div id="partnersCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                <div class="carousel-inner text-center">
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-4 col-md-2"><img src="pp4.jpg" class="img-fluid" alt="Partenaire 1"></div>
+                            <div class="col-4 col-md-2"><img src="pp3.jpg" class="img-fluid" alt="Partenaire 2"></div>
+                            <div class="col-4 col-md-2"><img src="pp2.jpg" class="img-fluid" alt="Partenaire 3"></div>
+                            <div class="col-4 col-md-2"><img src="pp1.jpg" class="img-fluid" alt="Partenaire 4"></div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row justify-content-center align-items-center">
+                            <div class="col-4 col-md-2"><img src="pp4.jpg" class="img-fluid" alt="Partenaire 5"></div>
+                            <div class="col-4 col-md-2"><img src="pp3.jpg" class="img-fluid" alt="Partenaire 6"></div>
+                            <div class="col-4 col-md-2"><img src="pp2.jpg" class="img-fluid" alt="Partenaire 7"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5 justify-content-center" >
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <h2 class="section-title mb-4">Contactez-nous</h2>
+                    <h5 class="mb-3" style="color: var(--sabaly-primary-blue);">Notre adresse</h5>
+                    <p>Immeuble Elysée, Cité Keur Gorgui, 4e étage</p>
+                    <p class="mb-5">Dakar, Sénégal</p>
+                    <div class="map-placeholder mb-4">
+                        <img src="loc p.jpg" alt="Localisation" class="img-fluid">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <form>
+                        <div class="mb-4"><input type="text" class="form-control p-3" placeholder="Nom" required></div>
+                        <div class="mb-4"><input type="email" class="form-control p-3" placeholder="Email" required></div>
+                        <div class="mb-5"><textarea class="form-control p-3" rows="4" placeholder="Message" required></textarea></div>
+                        <button type="submit" class="btn btn-lg fw-bold text-white w-100" style="background-color: var(--sabaly-accent-orange);">Envoyer le message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer-sabaly">
     <div class="container">
-      <div class="row text-center g-4">
-        <div class="col-md-3">
-          <div class="card h-100 border-0">
-            <div class="card-body">
-              <div class="fs-1 mb-2">💊</div>
-              <h5 class="card-title">Grande sélection</h5>
-              <p class="card-text text-muted">Médicaments, parapharmacie, compléments.</p>
+        <div class="row">
+            <div class="col-lg-4 mb-4 mb-lg-0">
+                <div class="footer-logo mb-3 fw-bold fs-4">SABALY CONSULTING</div>
+                <p class="footer-description mb-4">
+                    Cabinet de conseil sénégalais engagé aux côtés des PMEs, startups et ONG pour construire des structures solides, efficaces et résilientes.
+                </p>
+                <div class="social-links">
+                    <a href="#" class="text-white me-3"><i class="fab fa-facebook-f fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                    <a href="#" class="text-white me-3"><i class="fab fa-twitter fa-lg"></i></a>
+                    <a href="#" class="text-white"><i class="fab fa-instagram fa-lg"></i></a>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0">
-            <div class="card-body">
-              <div class="fs-1 mb-2">🚚</div>
-              <h5 class="card-title">Livraison</h5>
-              <p class="card-text text-muted">Livraison locale rapide.</p>
+
+            <div class="col-lg-3 col-md-6 mb-4 mb-md-0">
+                <h3 class="footer-title">Navigation</h3>
+                <ul class="footer-list">
+                    <li><a href="#accueil">Accueil</a></li>
+                    <li><a href="#about">À propos</a></li>
+                    <li><a href="#metiers">Services</a></li>
+                    <li><a href="#programmes">Programmes</a></li>
+                    <li><a href="#references">Références</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0">
-            <div class="card-body">
-              <div class="fs-1 mb-2">👩‍⚕️</div>
-              <h5 class="card-title">Conseils pharmaciens</h5>
-              <p class="card-text text-muted">Assistance professionnelle.</p>
+
+            <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                <h3 class="footer-title">Services</h3>
+                <ul class="footer-list">
+                    <li><a href="#">Conseil stratégique</a></li>
+                    <li><a href="#">Accompagnement PME</a></li>
+                    <li><a href="#">Formation</a></li>
+                    <li><a href="#">Coaching</a></li>
+                    <li><a href="#">Management de projets</a></li>
+                    
+                </ul>
             </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="card h-100 border-0">
-            <div class="card-body">
-              <div class="fs-1 mb-2">⏰</div>
-              <h5 class="card-title">Horaires</h5>
-              <p class="card-text text-muted">Lun–Sam 8:00–20:00</p>
+
+            <div class="col-lg-3">
+                <h3 class="footer-title">Contact</h3>
+                <p>
+                    <span class="icon-placeholder"><i class="fas fa-map-marker-alt"></i></span> Immeuble Élysée, Cité Keur Gorgui, 4e étage Dakar, Sénégal
+                </p>
+                <p>
+                    <span class="icon-placeholder"><i class="fas fa-phone"></i></span> +221 78 638 29 52
+                </p>
+                <p>
+                    <span class="icon-placeholder"><i class="fas fa-envelope"></i></span> info@sabalyconsulting.com
+                </p>
             </div>
-          </div>
         </div>
-      </div>
+        
+        <div class="footer-copyright text-center">
+            &copy; 2025 Sabaly Consulting. Tous droits réservés.
+        </div>
     </div>
-  </section>
+</footer>
 
-
-  <section class="bg-primary text-white py-4">
-    <div class="container d-flex justify-content-between align-items-center">
-      <div>
-        <h5 class="mb-1">Besoin d'une ordonnance ?</h5>
-        <p class="mb-0 small">Prenez rendez-vous pour une consultation ou envoyez votre ordonnance.</p>
-      </div>
-      <div>
-        <a href="contact.html" class="btn btn-light btn-animated">Envoyer ordonnance</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row gy-3">
-        <div class="col-md-4">
-          <h5>PharmaPlus</h5>
-            <p>PharmaPlus — Votre santé, notre priorité</p>
-
-          <p class="small text-muted">Soins, conseils et livraison — votre santé d'abord.</p>
-        </div>
-        <div class="col-md-4">
-          <h6>Liens</h6>
-
-  <p>
-    <a href="https://maps.google.com" target="_blank">
-      📍 Voir notre localisation
-    </a>
-  </p>
-
-  <p>
-    <a href="tel:+221770000000">
-      📞 Appeler : +221 77 287 00 80
-    </a>
-  </p>
-
-  <p>
-    <a href="mailto:pharmaplus@gmail.com">
-      ✉️ Email : pharmaplus@gmail.com
-    </a>
-  </p>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h6>Contact</h6>
-          <p class="small mb-1">email: contact@pharmaplus.sn</p>
-          <p class="small">Tél: +221 33 000 00 00</p>
-        </div>
-      </div>
-
-      <div class="text-center mt-3 small text-muted">
-        © 2025 PharmaPlus — Tous droits réservés
-      </div>
-    </div>
-  </footer>
-
-  <!-- Bootstrap JS + Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS -->
-  <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

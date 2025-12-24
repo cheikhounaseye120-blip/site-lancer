@@ -1,104 +1,326 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pharmacie Santé+</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sabaly Consulting - Site Complet</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<style>
+:root {
+    --sabaly-dark-blue: #121A2A; 
+    --sabaly-accent-orange: #FF8800;
+    --sabaly-light-blue: #007bff;
+    --sabaly-button-orange: #FF8800; 
+}
+body { scroll-behavior: smooth; margin:0; padding:0; }
 
-    <!-- Bootstrap -->
-    <link 
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" 
-      rel="stylesheet">
+/* Navbar */
+.navbar-bg { 
+    background-image: url(''); 
+    background-size: cover; 
+    background-position: center; 
+}
+.navbar { padding-top: 15px; padding-bottom: 15px; }
+.nav-link { color: hwb(bleu foncé) !important; font-weight: 500; margin-left: 15px; }
+.nav-link:hover { color: var(--sabaly-accent-orange) !important; }
+.logo-sabaly img { max-height: 60px; }
 
-    <link rel="stylesheet" href="style.css">
+/* Hero */
+.hero-section {
+    color: white;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('URL_IMAGE_FOND_EQUIPE_ICI'); 
+    background-size: cover;
+    background-position: center;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+}
+
+/* À propos */
+.icon-about { font-size: 1.5rem; margin-right: 15px; width: 40px; text-align: center; }
+.about-image { width: 100%; height: auto; border-radius: 15px; object-fit: cover; }
+.card-custom { border-radius: 15px; overflow: hidden; border: none; box-shadow: 0 4px 8px rgba(0,0,0,0.05); }
+
+/* Services */
+.service-card {
+    background-color: var(--sabaly-dark-blue);
+    color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    text-align: center;
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.service-icon { font-size: 3rem; color: var(--sabaly-light-blue); margin-bottom: 10px; }
+
+/* Programmes & Références */
+.program-header { background-color: #f0f0f0; padding: 40px 20px; border-radius: 15px; margin-bottom: 40px; text-align: center; }
+.program-header h2 { font-weight: bold; font-size: 2.5rem; color: var(--sabaly-dark-blue); }
+.program-card, .reference-card { padding: 25px; border-radius: 15px; margin-bottom: 25px; box-shadow: 0 4px 8px rgba(0,0,0,0.05); background-color: white; }
+.program-card ul, .reference-card ul { list-style: none; padding-left: 0; }
+.program-card .fa-check-circle, .reference-card .fa-check-circle { color: var(--sabaly-light-blue); margin-right: 8px; }
+
+/* Partenaires */
+.partner-logo { height: 80px; margin: 10px; display: inline-flex; align-items: center; justify-content: center; opacity: 0.7; }
+
+/* Contact */
+.map-placeholder { height: 300px; background-color: #e0e0e0; display: flex; align-items: center; justify-content: center; border-radius: 15px; margin-bottom: 30px; }
+
+/* Footer */
+.bg-dark-custom { background-color: var(--sabaly-dark-blue); color: white; }
+.text-orange { color: var(--sabaly-accent-orange); }
+.text-sabaly-blue { color: var(--sabaly-light-blue); }
+</style>
 </head>
-<body>
+<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="100">
 
-<!-- 🔹 NAVBAR -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-white">
-  <div class="container">
-    <a class="navbar-brand" href="index.html">Pharmacie Santé+</a>
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
-      <span class="navbar-toggler-icon"></span>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-bg sticky-top" id="main-nav">
+<div class="container"> 
+    <a class="navbar-brand logo-sabaly me-5" href="#"><img src="mml.jpg" alt="logo"></a> 
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
     </button>
-
-    <div class="collapse navbar-collapse" id="menu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
-        <li class="nav-item"><a class="nav-link" href="produits.html">Produits</a></li>
-        <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
-        <li class="nav-item"><a class="nav-link" href="apropos.html">À propos</a></li>
-        <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-      </ul>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="#accueil">Accueil</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">À Propos</a></li>
+            <li class="nav-item"><a class="nav-link" href="#programmes">Programmes</a></li>
+            <li class="nav-item"><a class="nav-link" href="#metiers">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#references">Références</a></li>
+            <li class="nav-item ms-lg-3"><a class="btn fw-bold text-white" style="background-color: var(--sabaly-button-orange);" href="#contact">Faire Appel</a></li>
+        </ul>
     </div>
-  </div>
+</div>
 </nav>
 
-<!-- 🔹 CAROUSEL / SLIDER -->
-<div id="carouselPharma" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
+<!-- Hero -->
+<header class="hero-section" id="accueil">
+<div class="container">
+    <h1 class="display-3 fw-bold text-white">Boostez votre performance <br>avec <span class="text-sabaly-blue">Sabaly Consulting</span></h1>
+    <p class="lead mb-4">Nous vous accompagnons dans vos projets de <span class="text-orange fw-bold">transformation</span>.</p>
+    <a href="#contact" class="btn btn-lg fw-bold" style="background-color: var(--sabaly-button-orange); color: white;">Contactez-nous</a>
+</div>
+</header>
 
-    <div class="carousel-item active">
-      <img src="https://via.placeholder.com/1400x500" class="d-block w-100" alt="">
-      <div class="carousel-caption bg-dark bg-opacity-50 rounded p-2">
-        <h2>Bienvenue à Pharmacie Santé+</h2>
-        <p>Votre santé, notre priorité.</p>
-      </div>
+<div class="container py-5">
+<!-- À propos -->
+<a id="about"></a>
+<div class="row pt-5">
+<div class="col-lg-6">
+    <h2 class="text-orange mt-5">À PROPOS DE SABALY CONSULTING</h2>
+    <h1 class="mb-4">UNE HISTOIRE DE VISION D'ENGAGEMENT ET DE RIGUEUR</h1>
+    <div class="d-flex align-items-start mb-4">
+        <div class="icon-about text-orange"><i class="fas fa-lightbulb"></i></div>
+        <p class="flex-grow-1">Fondée par Merry D. Niang, experte-comptable certifiée (CPA), Sabaly Consulting accompagne les PMEs, start-ups et ONG africaines dans leur structuration et leur croissance.</p>
     </div>
-
-    <div class="carousel-item">
-      <img src="https://via.placeholder.com/1400x500/55aa55" class="d-block w-100" alt="">
+    <div class="d-flex align-items-start mb-4">
+        <div class="icon-about text-orange"><i class="fas fa-users"></i></div>
+        <p class="flex-grow-1">Notre approche allie exigence professionnelle, proximité humaine et compréhension des réalités locales. Notre ambition : créer un pont entre vision stratégique et capacité opérationnelle pour transformer les ambitions en résultats durables.</p>
     </div>
-
-    <div class="carousel-item">
-      <img src="https://via.placeholder.com/1400x500/66cc77" class="d-block w-100" alt="">
+    <div class="d-flex align-items-start mb-5">
+        <div class="icon-about text-orange"><i class="fas fa-globe-africa"></i></div>
+        <p class="flex-grow-1">Nous intervenons auprès d'entrepreneurs, de ministères, d'instituts de recherche ou de bailleurs internationaux, toujours avec la même rigueur, le même sens du détail, et la même passion.</p>
     </div>
-
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselPharma" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon"></span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselPharma" data-bs-slide="next">
-    <span class="carousel-control-next-icon"></span>
-  </button>
+</div>
+<div class="col-lg-6 d-flex align-items-center justify-content-center">
+    <img src="nff.jpg" alt="Merry D. Niang" class="img-fluid about-image">
+</div>
 </div>
 
-<!-- 🔹 SECTION PRESENTATION -->
-<div class="container text-center mt-5">
-  <h2 class="mb-3">Votre pharmacie moderne</h2>
-  <p class="lead">
-    Nous proposons des médicaments, des services professionnels et une équipe dédiée à votre santé.
-  </p>
-  <a href="produits.html" class="btn btn-success mt-3">Voir les produits</a>
+<!-- Services -->
+<a id="metiers"></a>
+<div class="text-center p-5 bg-dark-custom rounded-3 mb-5 mt-5">
+    <h1 class="text-white mb-3">Nos Métiers</h1>
+    <p class="text-white-50">Des services intégrés pour relever vos défis de structuration et de performance.</p>
+</div>
+<div class="row justify-content-center">
+<div class="col-md-6 col-lg-3">
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-compass"></i></div>
+        <h4>Stratégie & Croissance</h4>
+        <p class="text-white-50"><small>Plans stratégiques, business models, fusions/acquisitions, levées de fonds</small></p>
+    </div>
+</div>
+<div class="col-md-6 col-lg-3">
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-chart-bar"></i></div>
+        <h4>Conseil Financier & Révision</h4>
+        <p class="text-white-50"><small>Restructuration, révision comptable, retraitements SYSCOA/IFRS</small></p>
+    </div>
+</div>
+<div class="col-md-6 col-lg-3">
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-th-large"></i></div>
+        <h4>Contrôle de Gestion</h4>
+        <p class="text-white-50"><small>Budgets, reporting, tableaux de bord personnalisés de performance</small></p>
+    </div>
+</div>
+<div class="col-md-6 col-lg-3">
+    <div class="service-card">
+        <div class="service-icon"><i class="fas fa-book-reader"></i></div>
+        <h4>Comptabilité</h4>
+        <p class="text-white-50"><small>Tenue comptable SYSCOA/IFRS/US GAAP, comptabilité analytique, externalisation</small></p>
+    </div>
+</div>
+</div>
+<div class="text-center mt-4 mb-5"><button class="btn btn-primary btn-lg">Voir plus</button></div>
+
+<!-- Programmes -->
+<a id="programmes"></a>
+<div class="program-header">
+    <h2>NOS PROGRAMMES</h2>
+</div>
+<div class="row">
+<!-- Starter Pack -->
+<div class="col-md-6">
+    <div class="program-card">
+        <h2 class="text-dark mb-3">Starter Pack de l'Entrepreneur</h2>
+        <p class="text-muted">Un tremplin stratégique pour lancer et structurer votre projet entrepreneurial.</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Diagnostic de votre projet ou idée</li>
+            <li><i class="fas fa-check-circle"></i> Structuration juridique</li>
+            <li><i class="fas fa-check-circle"></i> Élaboration du business model</li>
+            <li><i class="fas fa-check-circle"></i> Plan d'affaires bancaire et réaliste</li>
+            <li><i class="fas fa-check-circle"></i> Coaching stratégique et financier</li>
+            <li><i class="fas fa-check-circle"></i> Accès au réseau de partenaires</li>
+            <li><i class="fas fa-check-circle"></i> Suivi post-création</li>
+        </ul>
+    </div>
+</div>
+<!-- Non-Profit -->
+<div class="col-md-6">
+    <div class="program-card">
+        <h2 class="text-dark mb-3">Non-Profit Growth Lab</h2>
+        <p class="text-muted">Accélérateur pour les organisations à but non lucratif</p>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Diagnostic organisationnel approfondi</li>
+            <li><i class="fas fa-check-circle"></i> Mise en place des manuels de procédures</li>
+            <li><i class="fas fa-check-circle"></i> Structuration de la gouvernance</li>
+            <li><i class="fas fa-check-circle"></i> Appui à la gestion de subventions</li>
+            <li><i class="fas fa-check-circle"></i> Accompagnement à la rédaction de propositions</li>
+            <li><i class="fas fa-check-circle"></i> Coaching des équipes de direction</li>
+            <li><i class="fas fa-check-circle"></i> Digitalisation des processus</li>
+        </ul>
+    </div>
+</div>
 </div>
 
-<!-- 🔹 3 IMAGES DE PRESENTATION -->
-<div class="container mt-5">
-  <div class="row text-center">
-    <div class="col-md-4">
-      <img src="man-working-as-pharmacist.jpg" class="img-fluid rounded mb-2">
-      <h5>Produits Certifiés</h5>
+<!-- Références -->
+<a id="references"></a>
+<h1 class="text-center mb-3 mt-5">Nos Références</h1>
+<p class="text-center text-muted mb-5">À la croisée des secteurs public, privé et à but non lucratif, nous apportons des solutions concrètes à fort impact.</p>
+<div class="row">
+<div class="col-md-6">
+    <div class="reference-card">
+        <div class="d-flex align-items-center mb-3">
+            <div class="reference-icon text-sabaly-blue me-3"><i class="fas fa-university fa-2x"></i></div>
+            <h4 class="mb-0">Secteur public & éducation</h4>
+        </div>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Assistance financière et technique, diagnostics organisationnels.</li>
+        </ul>
     </div>
-
-    <div class="col-md-4">
-      <img src="" class="img-fluid rounded mb-2">
-      <h5>Conseils Médicaux</h5>
+</div>
+<div class="col-md-6">
+    <div class="reference-card">
+        <div class="d-flex align-items-center mb-3">
+            <div class="reference-icon text-sabaly-blue me-3"><i class="fas fa-microphone-alt fa-2x"></i></div>
+            <h4 class="mb-0">Recherche & enseignement supérieur</h4>
+        </div>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> retraitement des états financiers (IFRS/SYSCOHADA).</li>
+            <li><i class="fas fa-check-circle"></i> transformation du reporting financier.</li>
+        </ul>
     </div>
-
-    <div class="col-md-4">
-      <img src="livraison.jpg" class="img-fluid rounded mb-2">
-      <h5>Livraison Rapide</h5>
-    </div>
-  </div>
+</div>
 </div>
 
-<!-- 🔹 FOOTER -->
-<footer class="bg-dark text-white text-center p-3 mt-5">
-    © 2025 Pharmacie Santé+ — Tous droits réservés
+<!-- Partenaires -->
+<a id="partenaires"></a>
+<h1 class="text-center mb-5 mt-5">Nos Partenaires</h1>
+<p class="text-center text-muted mb-4">Ils nous font confiance.</p>
+<div class="text-center mb-5">
+    <img src="URL_LOGO_AIMS_ICI" alt="AIMS" class="partner-logo">
+</div>
+
+<!-- Contact -->
+<a id="contact"></a>
+<div class="row mt-5">
+<div class="col-md-6 mb-4">
+    <h5 class="mb-3">Notre adresse</h5>
+    <p>Immeuble Elysée, Cité Keur Gorgui, 4e étage</p>
+    <p class="mb-5">Dakar, Sénégal</p>
+    <h2 class="mb-4">Contactez-nous</h2>
+    <div class="map-placeholder mb-4">
+        <p class="text-muted">Placeholder Carte Google Maps</p>
+    </div>
+</div>
+<div class="col-md-6">
+    <form>
+        <div class="mb-4">
+            <input type="text" class="form-control" placeholder="Nom" required>
+        </div>
+        <div class="mb-4">
+            <input type="email" class="form-control" placeholder="Email" required>
+        </div>
+        <div class="mb-5">
+            <textarea class="form-control" rows="4" placeholder="Message" required></textarea>
+        </div>
+        <button type="submit" class="btn btn-lg fw-bold text-white w-100" style="background-color: var(--sabaly-button-orange);">Envoyer le message</button>
+    </form>
+</div>
+</div>
+
+<!-- Footer -->
+<footer class="bg-dark-custom text-white pt-5 pb-3">
+<div class="container">
+<div class="row">
+<div class="col-md-4 mb-4">
+    <h5 class="footer-logo text-white fs-4">Sabaly Consulting</h5>
+    <p class="text-white-50 mt-3">Cabinet de conseil sénégalais engagé aux côtés des PMEs, startups et ONG pour construire des structures solides, efficaces et résilientes.</p>
+    <div class="fs-4">
+        <a href="#" class="text-white me-3"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-linkedin"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>
+    </div>
+</div>
+<div class="col-md-4 mb-4">
+    <h5>Navigation</h5>
+    <ul class="list-unstyled">
+        <li><a href="#accueil" class="text-white-50 text-decoration-none">Accueil</a></li>
+        <li><a href="#about" class="text-white-50 text-decoration-none">À propos</a></li>
+        <li><a href="#metiers" class="text-white-50 text-decoration-none">Services</a></li>
+        <li><a href="#programmes" class="text-white-50 text-decoration-none">Programmes</a></li>
+        <li><a href="#partenaires" class="text-white-50 text-decoration-none">Nos Partenaires</a></li>
+        <li><a href="#contact" class="text-white-50 text-decoration-none
+            ">Contact</a></li>
+    </ul>
+    <h5 class="mt-4">Services</h5>
+    <ul class="list-unstyled">
+        <li><a href="#" class="text-white-50 text-decoration-none">Conseil stratégique</a></li>
+        <li><a href="#" class="text-white-50 text-decoration-none">Accompagnement PME</a></li>
+    </ul>
+</div>
+</div>
+
+<hr class="text-white-50">
+
+<div class="text-center">
+    <p class="text-white-50">&copy; 2025 Sabaly Consulting. Tous droits réservés.</p>
+</div>
+</div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="script.js"></script>
 </body>
 </html>
